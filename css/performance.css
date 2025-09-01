@@ -1,0 +1,92 @@
+/* Оптимизация производительности */
+
+/* Lazy loading для изображений */
+.lazy-image {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.lazy-image.loaded {
+    opacity: 1;
+}
+
+/* Оптимизация анимаций */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Оптимизация шрифтов */
+.font-display {
+    font-display: swap;
+}
+
+/* Оптимизация рендеринга */
+.gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Оптимизация скролла */
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+/* Оптимизация фокуса */
+.focus-visible:focus {
+    outline: 2px solid #0ea5e9;
+    outline-offset: 2px;
+}
+
+/* Оптимизация печати */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* Оптимизация для мобильных устройств */
+@media (max-width: 768px) {
+    .mobile-optimized {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    
+    .mobile-hidden {
+        display: none;
+    }
+}
+
+/* Оптимизация для высоких DPI экранов */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .high-dpi-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* Оптимизация для темной темы */
+@media (prefers-color-scheme: dark) {
+    .dark-mode-optimized {
+        background-color: #0f172a;
+        color: #f1f5f9;
+    }
+}
+
+/* Оптимизация для светлой темы */
+@media (prefers-color-scheme: light) {
+    .light-mode-optimized {
+        background-color: #f8fafc;
+        color: #1e293b;
+    }
+}

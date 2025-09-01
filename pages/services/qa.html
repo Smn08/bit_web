@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Business IT — QA и тестирование</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+    <link rel="shortcut icon" href="../../images/logo_cyberbit.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="../../css/bit-custom.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9',
+                        secondary: '#0f172a'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(15, 23, 42, 0.6) 100%) !important;
+        }
+        
+        .page-content {
+            padding-top: 64px; /* Уменьшенный отступ для фиксированного навбара */
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(75, 85, 99, 0.3);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(14, 165, 233, 0.5);
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-gray-100">
+    <!-- Header component -->
+    <div id="header-placeholder"></div>
+    <script>
+        fetch('../../components/header.html')
+            .then(r => r.text())
+            .then(t => {
+                document.getElementById('header-placeholder').innerHTML = t;
+            });
+    </script>
+
+    <main class="page-content">
+        <!-- Hero Section with Statistics -->
+        <section class="py-16 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold mb-4">QA и тестирование</h1>
+                    <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+                        Профессиональное тестирование программного обеспечения для обеспечения 
+                        высокого качества и надежности ваших IT-решений.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-bug-line text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">1000+</h3>
+                        <p class="text-gray-400">Найденных багов</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-check-double-line text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">99.9%</h3>
+                        <p class="text-gray-400">Качество продукта</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-rocket-line text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">50+</h3>
+                        <p class="text-gray-400">Успешных проектов</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Виды тестирования</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">
+                        Комплексный подход к обеспечению качества программного обеспечения
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="feature-card bg-gray-800 p-6 rounded-lg">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-function-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Функциональное тестирование</h4>
+                        <p class="text-gray-400">Проверка соответствия функциональных требований и бизнес-логики приложения.</p>
+                    </div>
+                    
+                    <div class="feature-card bg-gray-800 p-6 rounded-lg">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-layout-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">UI/UX тестирование</h4>
+                        <p class="text-gray-400">Проверка пользовательского интерфейса и удобства использования.</p>
+                    </div>
+                    
+                    <div class="feature-card bg-gray-800 p-6 rounded-lg">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-speed-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Производительность</h4>
+                        <p class="text-gray-400">Тестирование скорости работы и нагрузки на систему.</p>
+                    </div>
+                    
+                    <div class="feature-card bg-gray-800 p-6 rounded-lg">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-shield-check-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Безопасность</h4>
+                        <p class="text-gray-400">Проверка уязвимостей и защищенности приложения.</p>
+                    </div>
+                    
+                    <div class="feature-card bg-gray-800 p-6 rounded-lg">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-device-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Кросс-платформенность</h4>
+                        <p class="text-gray-400">Тестирование на различных устройствах и браузерах.</p>
+                    </div>
+                    
+                    <div class="feature-card bg-gray-800 p-6 rounded-lg">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-automation-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Автоматизация</h4>
+                        <p class="text-gray-400">Создание и поддержка автоматизированных тестов.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Процесс тестирования</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">
+                        Структурированный подход к обеспечению качества
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-file-list-3-line text-3xl text-primary"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Анализ требований</h4>
+                        <p class="text-gray-400 text-sm">Изучение документации и планирование тестирования</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-edit-line text-3xl text-primary"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Создание тестов</h4>
+                        <p class="text-gray-400 text-sm">Разработка тест-кейсов и сценариев</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-play-circle-line text-3xl text-primary"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Выполнение тестов</h4>
+                        <p class="text-gray-400 text-sm">Проведение тестирования и сбор результатов</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-file-chart-line text-3xl text-primary"></i>
+                        </div>
+                        <h4 class="text-lg font-semibold mb-2">Отчетность</h4>
+                        <p class="text-gray-400 text-sm">Анализ результатов и формирование отчетов</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Готовы улучшить качество?</h2>
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                    Свяжитесь с нами для консультации по тестированию 
+                    и обеспечению качества вашего программного обеспечения.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/pages/contacts.html" 
+                       class="bg-primary text-white px-8 py-3 rounded-button hover:bg-primary/90 transition-colors inline-block">
+                        Получить консультацию
+                    </a>
+                    <a href="/pages/services.html" 
+                       class="border border-primary text-primary px-8 py-3 rounded-button hover:bg-primary hover:text-white transition-colors inline-block">
+                        Все услуги
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer component -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('../../components/footer.html')
+            .then(r => r.text())
+            .then(t => {
+                document.getElementById('footer-placeholder').innerHTML = t;
+            });
+    </script>
+</body>
+</html>

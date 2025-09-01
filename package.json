@@ -1,0 +1,11 @@
+{
+  "name": "cyberbits-site",
+  "version": "1.0.0",
+  "description": "Modernized Cyberbits static site",
+  "scripts": {
+    "start": "live-server --open=index.html --port=3000 --watch=./"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+    <title>Контакты — Business IT</title>
+    <link rel="icon" href="../images/logo_cyberbit.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bit-custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#0ea5e9', secondary: '#0f172a' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <style>
+        body {
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(15, 23, 42, 0.6) 100%) !important;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-gray-100">
+    <div id="header-placeholder"></div>
+    <script>fetch('../components/header.html').then(r => r.text()).then(t => document.getElementById('header-placeholder').innerHTML = t);</script>
+    <script>
+        fetch('../components/header.html')
+            .then(r => r.text())
+            .then(t => {
+                document.getElementById('header-placeholder').innerHTML = t;
+                // После вставки хедера выделяем активный пункт
+                const currentPath = window.location.pathname.replace(/\\/g, '/');
+                const navLinks = document.querySelectorAll('#header-placeholder nav a');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentPath ||
+                        (link.getAttribute('href') === '/index.html' && (currentPath === '/' || currentPath === '/index.html'))) {
+                        link.classList.add('text-primary');
+                        link.classList.remove('text-gray-100');
+                        link.style.backgroundColor = 'rgba(14, 165, 233, 0.1)';
+                        link.style.padding = '0.5rem 1rem';
+                        link.style.borderRadius = '0.5rem';
+                    }
+                });
+            });
+    </script>
+    <main class="pt-0">
+        <section class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-4">Наши контакты (Группа компаний CyberBits)</h1>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Приезжайте в гости, будем рады встрече).</p>
+                </div>
+
+                <!-- Фильтры компаний -->
+                <div class="flex flex-wrap gap-4 mb-10 justify-center">
+                    <button
+                        class="company-filter bg-primary text-white px-4 py-2 rounded-button hover:bg-primary/80 transition-colors active"
+                        data-filter="all">Все</button>
+                    <button
+                        class="company-filter bg-gray-800 text-white px-4 py-2 rounded-button hover:bg-primary/60 transition-colors"
+                        data-filter="integrator">Интегратор</button>
+                    <button
+                        class="company-filter bg-gray-800 text-white px-4 py-2 rounded-button hover:bg-primary/60 transition-colors"
+                        data-filter="supplier">Поставщик</button>
+                    <button
+                        class="company-filter bg-gray-800 text-white px-4 py-2 rounded-button hover:bg-primary/60 transition-colors"
+                        data-filter="development">Разработка</button>
+                </div>
+
+                <div id="company-list"
+                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 max-w-6xl mx-auto">
+                    <!-- Карточка компании Business IT (пример) -->
+                    <div class="company-card bg-gray-800 p-8 rounded-lg integrator supplier development flex flex-col">
+                        <div class="flex-grow mb-6">
+                            <h2 class="text-2xl font-semibold mb-4 flex items-center"><i
+                                    class="ri-building-line text-primary mr-2"></i>ООО "Бизнес Айти"</h2>
+                            <ul class="space-y-2 text-gray-300">
+                                <li><b>ИНН:</b> 5263092184</li>
+                                <li><b>ОГРН:</b> 1125263003238</li>
+                                <li><b>Телефон:</b> <a href="tel:88001017895" class="text-primary hover:underline">8 800
+                                        101
+                                        78 95</a></li>
+                                <li><b>Email:</b> <a href="mailto:info@cyberbits.ru"
+                                        class="text-primary hover:underline">info@cyberbits.ru</a></li>
+                                <li><b>Техподдержка:</b> <a href="mailto:support@cyberbits.ru"
+                                    class="text-primary hover:underline">support@cyberbits.ru</a></li>
+                                <li><b>Адрес:</b> 603022, Россия, Нижний Новгород, ул. Малая Ямская д.78 офис 219</li>
+                            </ul>
+                        </div>
+                        <div class="mt-auto rounded-lg overflow-hidden shadow-lg">
+                            <div style="position:relative;overflow:hidden;"><a
+                                    href="https://yandex.ru/maps/47/nizhny-novgorod/?utm_medium=mapframe&utm_source=maps"
+                                    style="color:#eee;font-size:12px;position:absolute;top:0px;">Нижний Новгород</a><a
+                                    href="https://yandex.ru/maps/47/nizhny-novgorod/house/malaya_yamskaya_ulitsa_78/YEoYfwBpQE0OQFtsfX9xd3VnZg==/?indoorLevel=1&ll=43.979989%2C56.306942&utm_medium=mapframe&utm_source=maps&z=17.06"
+                                    style="color:#eee;font-size:12px;position:absolute;top:14px;">Малая Ямская улица, 78
+                                    — Яндекс Карты</a><iframe
+                                    src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=43.979989%2C56.306942&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg1Njk3Njk4NxJT0KDQvtGB0YHQuNGPLCDQndC40LbQvdC40Lkg0J3QvtCy0LPQvtGA0L7QtCwg0JzQsNC70LDRjyDQr9C80YHQutCw0Y8g0YPQu9C40YbQsCwgNzgiCg2C6y9CFVA6YUI%2C&z=17.06"
+                                    width="100%" height="250" frameborder="1" allowfullscreen="true"
+                                    style="position:relative;"></iframe></div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка компании "ИТ-Решения" (пример) -->
+                    <div class="company-card bg-gray-800 p-8 rounded-lg integrator supplier flex flex-col">
+                        <div class="flex-grow mb-6">
+                            <h2 class="text-2xl font-semibold mb-4 flex items-center"><i
+                                    class="ri-building-line text-primary mr-2"></i>ООО "ИТ-Решения"</h2>
+                            <ul class="space-y-2 text-gray-300">
+                                <li><b>ИНН:</b> 7701234567</li>
+                                <li><b>ОГРН:</b> 1027700123456</li>
+                                <li><b>Телефон:</b> <a href="tel:84951234567" class="text-primary hover:underline">8
+                                        (495) 123-45-67</a></li>
+                                <li><b>Email:</b> <a href="mailto:contact@itsolutions.ru"
+                                        class="text-primary hover:underline">contact@itsolutions.ru</a></li>
+                                <li><b>Адрес:</b> г. Москва, ул. Ленина, д. 10</li>
+                            </ul>
+                        </div>
+                        <div class="mt-auto rounded-lg overflow-hidden shadow-lg">
+                            <div style="position:relative;overflow:hidden;"><a
+                                    href="https://yandex.ru/maps/213/moscow/?utm_medium=mapframe&utm_source=maps"
+                                    style="color:#eee;font-size:12px;position:absolute;top:0px;">Москва</a><a
+                                    href="https://yandex.ru/maps/213/moscow/house/ulitsa_lenina_10/Z0kYcw9jSkYCQFtvfXt0eXlqYg==/?ll=37.617644%2C55.755819&z=17"
+                                    style="color:#eee;font-size:12px;position:absolute;top:14px;">Улица Ленина, 10 —
+                                    Яндекс  Карты</a><iframe
+                                    src="https://yandex.ru/map-widget/v1/?ll=37.617644%2C55.755819&z=17" width="100%"
+                                    height="250" frameborder="1" allowfullscreen="true"
+                                    style="position:relative;"></iframe></div>
+                        </div>
+                    </div>
+
+                    <!-- Карточка компании "Разработка Про" (пример) -->
+                    <div class="company-card bg-gray-800 p-8 rounded-lg development flex flex-col">
+                        <div class="flex-grow mb-6">
+                            <h2 class="text-2xl font-semibold mb-4 flex items-center"><i
+                                    class="ri-building-line text-primary mr-2"></i>ООО "Разработка Про"</h2>
+                            <ul class="space-y-2 text-gray-300">
+                                <li><b>ИНН:</b> 9876543210</li>
+                                <li><b>ОГРН:</b> 1029876543210</li>
+                                <li><b>Телефон:</b> <a href="tel:88127654321" class="text-primary hover:underline">8
+                                        (812) 765-43-21</a></li>
+                                <li><b>Email:</b> <a href="mailto:dev@devpro.ru"
+                                        class="text-primary hover:underline">dev@devpro.ru</a></li>
+                                <li><b>Адрес:</b> г. Санкт-Петербург, Невский проспект, д. 5</li>
+                            </ul>
+                        </div>
+                        <div class="mt-auto rounded-lg overflow-hidden shadow-lg">
+                            <div style="position:relative;overflow:hidden;"><a
+                                    href="https://yandex.ru/maps/2/saint-petersburg/?utm_medium=mapframe&utm_source=maps"
+                                    style="color:#eee;font-size:12px;position:absolute;top:0px;">Санкт-Петербург</a><a
+                                    href="https://yandex.ru/maps/2/saint-petersburg/house/nevsky_prospekt_5/Z0kYcw5kQEEHQFtsfXt0dXhqYA==/?ll=30.315868%2C59.939095&z=17"
+                                    style="color:#eee;font-size:12px;position:absolute;top:14px;">Невский проспект, 5 —
+                                    Яндекс  Карты</a><iframe
+                                    src="https://yandex.ru/map-widget/v1/?ll=30.315868%2C59.939095&z=17" width="100%"
+                                    height="250" frameborder="1" allowfullscreen="true"
+                                    style="position:relative;"></iframe></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script>fetch('../components/footer.html').then(r => r.text()).then(t => document.getElementById('footer-placeholder').innerHTML = t);</script>
+    <script>
+        // Фильтрация компаний
+        document.querySelectorAll('.company-filter').forEach(btn => {
+            btn.addEventListener('click', function () {
+                document.querySelectorAll('.company-filter').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                const filter = this.getAttribute('data-filter');
+                document.querySelectorAll('.company-card').forEach(card => {
+                    if (filter === 'all' || card.classList.contains(filter)) {
+                        card.style.display = '';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

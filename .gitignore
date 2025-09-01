@@ -1,0 +1,32 @@
+# Node.js / npm (если используешь)
+node_modules/
+yarn.lock
+
+# Локальные настройки редакторов
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Логи
+*.log
+
+# Операционная система
+.DS_Store
+Thumbs.db
+
+# Файлы сборки / дистрибутивы
+/dist/
+/build/
+/out/
+/*.min.js
+
+# Секреты и конфиги
+.env
+.env.local
+.env.*.local
+
+# Кэш браузера или временные файлы
+*.tmp
+*.bak
+*.swp

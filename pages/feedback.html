@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+    <title>Обратная связь — Business IT</title>
+    <link rel="icon" href="../images/logo_cyberbit.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bit-custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#0ea5e9', secondary: '#0f172a' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+</head>
+<body class="bg-gray-950 text-gray-100">
+    <div id="header-placeholder"></div>
+    <script>fetch('../components/header.html').then(r => r.text()).then(t => document.getElementById('header-placeholder').innerHTML = t);</script>
+    <script>
+        fetch('../components/header.html')
+            .then(r => r.text())
+            .then(t => {
+                document.getElementById('header-placeholder').innerHTML = t;
+                const currentPath = window.location.pathname.replace(/\\/g, '/');
+                const navLinks = document.querySelectorAll('#header-placeholder nav a');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentPath ||
+                        (link.getAttribute('href') === '/index.html' && (currentPath === '/' || currentPath === '/index.html'))) {
+                        link.classList.add('text-primary');
+                        link.classList.remove('text-gray-100');
+                        link.style.backgroundColor = 'rgba(14, 165, 233, 0.1)';
+                        link.style.padding = '0.5rem 1rem';
+                        link.style.borderRadius = '0.5rem';
+                    }
+                });
+            });
+    </script>
+    <main class="pt-0">
+        <section class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-4">Обратная связь</h1>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Оставьте заявку, и мы свяжемся с вами в ближайшее время для обсуждения вашего проекта</p>
+                </div>
+                
+                <div class="max-w-2xl mx-auto">
+                    <!-- Форма обратной связи -->
+                    <div class="bg-gray-800 p-8 rounded-lg">
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-2">Ваше имя</label>
+                                <input type="text" id="name" name="name" required
+                                    class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-primary text-white">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                                <div class="relative">
+                                    <input type="email" id="email" name="email" required placeholder="example@domain.com"
+                                        class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-primary text-white">
+                                    <span id="emailDomainSuggestion" class="absolute text-gray-500 pointer-events-none" style="top: 0.5rem; left: 1rem;"></span>
+                                </div>
+                                <span id="emailError" class="text-red-500 text-sm mt-1 hidden"></span>
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-medium mb-2">Телефон</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+7 (XXX) XXX-XX-XX" 
+                                    class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-primary text-white">
+                                <span id="phoneError" class="text-red-500 text-sm mt-1 hidden"></span>
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-sm font-medium mb-2">Тема</label>
+                                <select id="subject" name="subject" required
+                                    class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-primary text-white">
+                                    <option value="">Выберите тему</option>
+                                    <option value="consultation">Консультация</option>
+                                    <option value="project">Новый проект</option>
+                                    <option value="support">Техническая поддержка</option>
+                                    <option value="partnership">Партнерство</option>
+                                    <option value="other">Другое</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium mb-2">Сообщение</label>
+                                <textarea id="message" name="message" rows="4" required
+                                    class="w-full px-4 py-2 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-primary text-white"></textarea>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-primary text-white px-6 py-3 rounded-button hover:bg-primary/90 transition-colors">
+                                Отправить сообщение
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script>fetch('../components/footer.html').then(r=>r.text()).then(t=>document.getElementById('footer-placeholder').innerHTML=t);</script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            let isValid = true;
+
+            // Валидация Email
+            const emailInput = document.getElementById('email');
+            const emailError = document.getElementById('emailError');
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            // Автоматическая очистка и приведение к нижнему регистру для email
+            emailInput.value = emailInput.value.trim().toLowerCase();
+
+            if (!emailInput.value.match(emailPattern)) {
+                emailError.textContent = 'Пожалуйста, введите корректный адрес электронной почты.';
+                emailError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                emailError.classList.add('hidden');
+            }
+
+            // Валидация телефона
+            const phoneInput = document.getElementById('phone');
+            const phoneError = document.getElementById('phoneError');
+            const cleanedPhone = phoneInput.value.replace(/\D/g, ''); // Получаем только цифры
+
+            if (phoneInput.value.length > 0) { // Проверяем только если что-то введено
+                const phonePattern = /^[0-9+\-()\s]+$/; // Более гибкая проверка символов
+                if (!phoneInput.value.match(phonePattern)) {
+                    phoneError.textContent = 'Пожалуйста, используйте только цифры, +, -, скобки и пробелы.';
+                    phoneError.classList.remove('hidden');
+                    isValid = false;
+                } else if (cleanedPhone.length !== 11) { // Проверяем на 11 цифр (включая 7 после +)
+                    phoneError.textContent = 'Пожалуйста, введите полный номер телефона (11 цифр, включая +7).';
+                    phoneError.classList.remove('hidden');
+                    isValid = false;
+                } else {
+                    phoneError.classList.add('hidden');
+                }
+            } else { // Если поле опционально и пустое, убираем ошибку
+                phoneError.classList.add('hidden');
+            }
+            
+            if (isValid) {
+                // Здесь будет код для отправки формы на сервер
+                alert('Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.');
+                this.reset();
+            }
+        });
+
+        // Автоматическое форматирование номера телефона
+        const phoneInput = document.getElementById('phone');
+        phoneInput.addEventListener('input', function(e) {
+            let value = e.target.value;
+            let digits = value.replace(/\D/g, ''); // Получаем только цифры
+
+            // Принудительное добавление +7
+            if (digits.startsWith('8')) {
+                digits = '7' + digits.substring(1);
+            } else if (digits.startsWith('9')) {
+                if (!digits.startsWith('79')) {
+                    digits = '7' + digits;
+                }
+            }
+            
+            if (digits.length === 0) {
+                e.target.value = '';
+                return;
+            }
+
+            // Убеждаемся, что первый символ после '+' - это '7'
+            if (digits.length > 0 && !digits.startsWith('7')) {
+                digits = '7' + digits;
+            }
+
+            let formatted = '+7';
+            let currentDigits = digits.substring(1); // Цифры после '7'
+
+            if (currentDigits.length > 0) {
+                formatted += ' (';
+                if (currentDigits.length > 3) {
+                    formatted += currentDigits.substring(0, 3) + ') ';
+                    currentDigits = currentDigits.substring(3);
+                } else {
+                    formatted += currentDigits;
+                    currentDigits = '';
+                }
+            }
+
+            if (currentDigits.length > 0) {
+                if (currentDigits.length > 3) {
+                    formatted += currentDigits.substring(0, 3) + '-';
+                    currentDigits = currentDigits.substring(3);
+                } else {
+                    formatted += currentDigits;
+                    currentDigits = '';
+                }
+            }
+
+            if (currentDigits.length > 0) {
+                if (currentDigits.length > 2) {
+                    formatted += currentDigits.substring(0, 2) + '-';
+                    currentDigits = currentDigits.substring(2);
+                } else {
+                    formatted += currentDigits;
+                    currentDigits = '';
+                }
+            }
+
+            if (currentDigits.length > 0) {
+                formatted += currentDigits.substring(0, 2);
+            }
+
+            e.target.value = formatted;
+        });
+
+        // Автоматическая помощь и проверка ввода Email
+        const emailInput = document.getElementById('email');
+        const emailError = document.getElementById('emailError');
+        const emailDomainSuggestion = document.getElementById('emailDomainSuggestion');
+
+        // Helper to measure text width for positioning the suggestion
+        function measureTextWidth(text, font) {
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            context.font = font;
+            const metrics = context.measureText(text);
+            return metrics.width;
+        }
+
+        emailInput.addEventListener('input', function(e) {
+            let value = e.target.value;
+            let cursorPosition = e.target.selectionStart; // Capture cursor position before any changes
+
+            // Step 1: Filter invalid characters, trim, and lowercase
+            const originalValue = value; // Store original value for comparison
+            value = value.replace(/[^a-zA-Z0-9._%+-@]/g, ''); // Filter invalid chars
+            value = value.trim().toLowerCase(); // Trim and lowercase
+            
+            // If the value was programmatically changed (due to filtering/trimming)
+            if (originalValue !== value) {
+                e.target.value = value;
+                // Adjust cursor position if characters were removed before the cursor
+                if (cursorPosition > value.length) {
+                    cursorPosition = value.length;
+                }
+                e.target.setSelectionRange(cursorPosition, cursorPosition);
+            }
+
+            // Update error message for invalid characters
+            if (originalValue !== value && originalValue.length > value.length) { // Only show error if characters were actually removed
+                emailError.textContent = 'Недопустимые символы. Разрешены только буквы, цифры, @, ., _, %, +, -.';
+                emailError.classList.remove('hidden');
+            } else {
+                emailError.classList.add('hidden');
+            }
+
+            // Step 2: Handle domain suggestion (ghost text)
+            emailDomainSuggestion.textContent = ''; // Clear previous suggestion
+            emailDomainSuggestion.classList.add('hidden');
+
+            if (value.length === 0) {
+                return; // No value, no errors or suggestions
+            }
+
+            const atIndex = value.indexOf('@');
+            if (atIndex > -1) {
+                const typedDomain = value.substring(atIndex + 1);
+                const usernamePart = value.substring(0, atIndex + 1);
+
+                const commonDomains = ['gmail.com', 'yandex.ru', 'mail.ru', 'outlook.com', 'yahoo.com'];
+                
+                let suggestedDomainPart = '';
+                let suggestionFound = false;
+
+                // Only suggest if typed domain is not empty and matches a common domain start
+                if (typedDomain.length > 0) {
+                    for (const domain of commonDomains) {
+                        if (domain.startsWith(typedDomain)) {
+                            suggestedDomainPart = domain.substring(typedDomain.length);
+                            suggestionFound = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (suggestionFound && suggestedDomainPart.length > 0) {
+                    emailDomainSuggestion.textContent = suggestedDomainPart;
+                    emailDomainSuggestion.classList.remove('hidden');
+
+                    // Calculate position based on typed value
+                    const inputStyle = window.getComputedStyle(emailInput);
+                    const font = `${inputStyle.fontWeight} ${inputStyle.fontSize} ${inputStyle.fontFamily}`;
+                    const paddingLeft = parseFloat(inputStyle.paddingLeft);
+                    const paddingTop = parseFloat(inputStyle.paddingTop);
+                    
+                    const typedTextWidth = measureTextWidth(value, font);
+                    emailDomainSuggestion.style.left = `${paddingLeft + typedTextWidth}px`;
+                    emailDomainSuggestion.style.top = `${paddingTop}px`; // Match input's padding top
+
+                } else {
+                    emailDomainSuggestion.classList.add('hidden'); // Hide suggestion
+                }
+
+                // Step 3: Handle basic email format validation messages
+                if (typedDomain.length > 0 && typedDomain.indexOf('.') === -1) {
+                    emailError.textContent = 'Введите точку (.) для указания домена (например, .com, .ru)';
+                    emailError.classList.remove('hidden');
+                } else {
+                    // Only hide if no other error is present (like invalid chars removed)
+                    if (originalValue === value) {
+                         emailError.classList.add('hidden');
+                    }
+                }
+
+            } else { // No '@' in the email
+                // If no @, but enough characters
+                if (value.length >= 3) {
+                    emailError.textContent = 'Email должен содержать символ @';
+                    emailError.classList.remove('hidden');
+                } else {
+                    // Only hide if no other error is present (like invalid chars removed)
+                    if (originalValue === value) {
+                        emailError.classList.add('hidden');
+                    }
+                }
+                emailDomainSuggestion.classList.add('hidden'); // Hide suggestion when no @
+            }
+        });
+
+        // Handle Tab key to accept suggestion
+        emailInput.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab' && !emailDomainSuggestion.classList.contains('hidden') && emailDomainSuggestion.textContent.length > 0) {
+                e.preventDefault(); // Prevent default tab behavior (focusing next element)
+                const suggestionText = emailDomainSuggestion.textContent;
+                const atIndex = this.value.indexOf('@');
+                if (atIndex > -1) {
+                    const typedDomainPart = this.value.substring(atIndex + 1);
+                    const usernamePart = this.value.substring(0, atIndex + 1);
+                    
+                    // Concatenate the username part, typed domain part, and the suggestion suffix
+                    this.value = usernamePart + typedDomainPart + suggestionText;
+                    
+                    emailError.classList.add('hidden'); // Clear any current error
+                    emailDomainSuggestion.classList.add('hidden'); // Hide suggestion after accepting
+                }
+            }
+        });
+    </script>
+</body>
+</html> 

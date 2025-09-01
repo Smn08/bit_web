@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+    <title>О компании — Business IT</title>
+    <link rel="icon" href="../images/logo_cyberbit.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bit-custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#0ea5e9', secondary: '#0f172a' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <style>
+        body {
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(15, 23, 42, 0.6) 100%) !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100">
+    <div id="header-placeholder"></div>
+    <script>fetch('../components/header.html').then(r => r.text()).then(t => document.getElementById('header-placeholder').innerHTML = t);</script>
+    <script>
+        fetch('../components/header.html')
+            .then(r => r.text())
+            .then(t => {
+                document.getElementById('header-placeholder').innerHTML = t;
+                // После вставки хедера выделяем активный пункт
+                const currentPath = window.location.pathname.replace(/\\/g, '/');
+                const navLinks = document.querySelectorAll('#header-placeholder nav a');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentPath ||
+                        (link.getAttribute('href') === '/index.html' && (currentPath === '/' || currentPath === '/index.html'))) {
+                        link.classList.add('text-primary');
+                        link.classList.remove('text-gray-100');
+                        link.style.backgroundColor = 'rgba(14, 165, 233, 0.1)';
+                        link.style.padding = '0.5rem 1rem';
+                        link.style.borderRadius = '0.5rem';
+                    }
+                });
+            });
+    </script>
+    <main class="pt-0">
+        <!-- Hero Section -->
+        <section class="relative w-full bg-gray-900 overflow-hidden">
+            <div class="container mx-auto px-4 py-16 flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">О компании <span class="text-primary">Business IT</span></h1>
+                    <p class="text-xl text-gray-300 mb-6">В состав проектных команд Business IT по ИБ входят инженеры, аналитики, технические писатели, а также руководители проектов по защите информации. Генеральным подрядчиком в наших проектах выступают лицензированные компании, обладающие всеми необходимыми лицензиями на деятельность по технической защите конфиденциальной информации, а также на работу с шифровальными средствами.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-gray-400"><i class="ri-shield-check-line text-primary mr-2"></i> Сертифицированные специалисты (CISA, CISM, CGEIT, OSCP, CEH, OSWE)</li>
+                        <li class="flex items-center text-gray-400"><i class="ri-team-line text-primary mr-2"></i> Проектные команды в Москве, СПб, ЦФО и ПФО</li>
+                        <li class="flex items-center text-gray-400"><i class="ri-lock-password-line text-primary mr-2"></i> Лицензии на все виды деятельности по ИБ</li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://readdy.ai/api/search-image?query=cybersecurity%20team%20working%20in%20modern%20office%2C%20professionals%20analyzing%20security%20data%20on%20multiple%20screens%2C%20dark%20blue%20environment%20with%20digital%20elements%2C%20professional%20workspace%20visualization&width=600&height=800&seq=about&orientation=portrait" alt="О нас" class="w-full max-w-xs rounded-lg shadow-lg">
+                </div>
+            </div>
+        </section>
+        <!-- Направления и решения -->
+        <section class="py-16 bg-gray-950">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-900 p-8 rounded-lg border border-gray-800 mb-8 md:mb-0">
+                        <h2 class="text-2xl font-semibold mb-4">Профильные направления</h2>
+                        <ul class="space-y-2 text-gray-300 list-disc list-inside">
+                            <li>Защита информационных систем персональных данных. Аттестация ИС, выполнение требований ФСТЭК.</li>
+                            <li>Защита объектов критической информационной инфраструктуры. ФЗ-187, ФСТЭК.</li>
+                            <li>Проведение тестирования на проникновение (анализ защищённости).</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-lg border border-gray-800">
+                        <h2 class="text-2xl font-semibold mb-4">Решения для замкнутого цикла ИБ</h2>
+                        <ul class="space-y-2 text-gray-300 list-disc list-inside">
+                            <li>Аудит по защите информации, разработка «дорожных карт» развития ИБ, построение SOC.</li>
+                            <li>Проектирование и создание процессов работы с SIEM-системой, создание центра мониторинга.</li>
+                            <li>Киберполигон и Security Awareness — обучение персонала, выполнение требований ФСТЭК.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Опыт -->
+        <section class="py-16 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-semibold mb-6">Наш опыт</h2>
+                <p class="text-gray-300 mb-4">Наши инженеры обладают опытом проектирования и внедрения таких средств защиты информации как:</p>
+                <div class="flex flex-wrap gap-3">
+                    <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Secret Net Studio</span>
+                    <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">ПАК «Соболь»</span>
+                    <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">АПКШ «Континент»</span>
+                    <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">vGate</span>
+                    <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Dallas Lock</span>
+                    <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">ViPNet HW</span>
+                    <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">MaxPatrol SIEM</span>
+                    <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Fortinet</span>
+                    <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Check Point</span>
+                    <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Imperva WAF & DAM</span>
+                    <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Micro Focus ArcSight</span>
+                    <span class="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">Splunk</span>
+                </div>
+            </div>
+        </section>
+        <!-- Команда -->
+        <section class="py-16 bg-gray-950">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-semibold mb-6">Наша команда</h2>
+                <ul class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <li class="bg-gray-900 p-6 rounded-lg border border-gray-800 text-center text-lg text-gray-300">Эксперты по кибербезопасности</li>
+                    <li class="bg-gray-900 p-6 rounded-lg border border-gray-800 text-center text-lg text-gray-300">ИТ-архитекторы</li>
+                    <li class="bg-gray-900 p-6 rounded-lg border border-gray-800 text-center text-lg text-gray-300">Сертифицированные инженеры</li>
+                </ul>
+            </div>
+        </section>
+        <!-- Как мы работаем -->
+        <section class="py-16 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-semibold mb-6">Как мы работаем</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-900 p-6 rounded-lg border border-primary flex flex-col items-center text-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                            <i class="ri-search-eye-line text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">Анализ и аудит</h3>
+                        <p class="text-gray-400 text-sm">Проводим анализ угроз и аудит текущей инфраструктуры.</p>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-lg border border-primary flex flex-col items-center text-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                            <i class="ri-file-list-3-line text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">Проектирование и внедрение</h3>
+                        <p class="text-gray-400 text-sm">Разрабатываем решения и внедряем их под задачи клиента.</p>
+                    </div>
+                    <div class="bg-gray-900 p-6 rounded-lg border border-primary flex flex-col items-center text-center">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-4">
+                            <i class="ri-customer-service-2-line text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="font-semibold mb-2">Поддержка и развитие</h3>
+                        <p class="text-gray-400 text-sm">Обеспечиваем сопровождение, обучение и развитие систем.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script>fetch('../components/footer.html').then(r=>r.text()).then(t=>document.getElementById('footer-placeholder').innerHTML=t);</script>
+</body>
+</html>

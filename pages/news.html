@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+    <title>Новости — Business IT</title>
+    <link rel="icon" href="../images/logo_cyberbit.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bit-custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#0ea5e9', secondary: '#0f172a' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <style>
+        body {
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(15, 23, 42, 0.6) 100%) !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100">
+    <div id="header-placeholder"></div>
+    <script>fetch('../components/header.html').then(r => r.text()).then(t => document.getElementById('header-placeholder').innerHTML = t);</script>
+    <script>
+        fetch('../components/header.html')
+            .then(r => r.text())
+            .then(t => {
+                document.getElementById('header-placeholder').innerHTML = t;
+                // После вставки хедера выделяем активный пункт
+                const currentPath = window.location.pathname.replace(/\\/g, '/');
+                const navLinks = document.querySelectorAll('#header-placeholder nav a');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentPath ||
+                        (link.getAttribute('href') === '/index.html' && (currentPath === '/' || currentPath === '/index.html'))) {
+                        link.classList.add('text-primary');
+                        link.classList.remove('text-gray-100');
+                        link.style.backgroundColor = 'rgba(14, 165, 233, 0.1)';
+                        link.style.padding = '0.5rem 1rem';
+                        link.style.borderRadius = '0.5rem';
+                    }
+                });
+            });
+    </script>
+    <main class="pt-0">
+        <section class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-4">Последние новости</h1>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Читайте, чтобы быть в курсе последних новостей и тенденций в области информационной безопасности.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  <article class="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:-translate-y-1 hover:shadow-xl">
+                    <div class="flex items-center mb-2">
+                      <i class="ri-calendar-event-line text-primary mr-2"></i>
+                      <span class="news-date text-sm text-gray-400">03/07/2024</span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-2">Spacebit продолжает совершенствовать систему управления безопасностью конфигураций ПО X-Config</h2>
+                    <p class="text-gray-300">Компания Spacebit, российский разработчик решений в области информационной безопасности, выпустила новую версию системы управления уязвимостями конфигураций программного обеспечения X-Config. Поиск сетевых ресурсов и задач на проверку стал намного быстрее и удобнее, оптимизирована фильтрация свойств ресурсов и реализована выгрузка отчетов в CSV.</p>
+                  </article>
+                  <article class="bg-gray-800 p-6 rounded-lg shadow-lg transition-transform transform hover:-translate-y-1 hover:shadow-xl">
+                    <div class="flex items-center mb-2">
+                      <i class="ri-calendar-event-line text-primary mr-2"></i>
+                      <span class="news-date text-sm text-gray-400">27/02/2024</span>
+                    </div>
+                    <h2 class="text-xl font-semibold mb-2">Spacebit расширил функционал X-Config – системы для управления уязвимостями конфигураций ПО</h2>
+                    <p class="text-gray-300">Компания Spacebit обновила систему управления уязвимостями конфигураций программного обеспечения X-Config. В новой версии расширились возможности для аутентификации в обслуживаемых ресурсах и повысилось удобство работы с отчетами. Значительные изменения коснулись осуществления аутентификации в ресурсах, которые контролирует X-Config. Получить доступ к защищаемым ресурсам на базе Linux можно теперь без использования пароля, с помощью SSH-ключа.</p>
+                  </article>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script>fetch('../components/footer.html').then(r=>r.text()).then(t=>document.getElementById('footer-placeholder').innerHTML=t);</script>
+</body>
+</html>
