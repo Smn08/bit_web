@@ -1,0 +1,45 @@
+User-agent: *
+Allow: /
+
+# Основные страницы
+Allow: /index.html
+Allow: /pages/services.html
+Allow: /pages/products.html
+Allow: /pages/contacts.html
+Allow: /pages/experience.html
+
+# Услуги
+Allow: /pages/services/
+Allow: /pages/services/pentest.html
+Allow: /pages/services/qa.html
+Allow: /pages/services/protectkii.html
+Allow: /pages/services/protectispd.html
+Allow: /pages/services/project.html
+Allow: /pages/services/gis.html
+Allow: /pages/services/learning.html
+Allow: /pages/services/development.html
+Allow: /pages/services/cybertest.html
+Allow: /pages/services/cyberpolygon.html
+Allow: /pages/services/cybereducation.html
+Allow: /pages/services/1c.html
+
+# Продукты
+Allow: /pages/products/
+Allow: /pages/products/cyberwatch.html
+Allow: /pages/products/antilocker.html
+Allow: /pages/products/avanpost.html
+Allow: /pages/products/indeed.html
+Allow: /pages/products/infowatch.html
+Allow: /pages/products/spacebit.html
+Allow: /pages/products/internetcontrolservis.html
+
+# Ресурсы
+Allow: /css/
+Allow: /images/
+Allow: /components/
+
+# Sitemap
+Sitemap: http://95.31.38.23/sitemap.xml
+
+# Crawl-delay для уважительного отношения к серверу
+Crawl-delay: 1

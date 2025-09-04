@@ -1,0 +1,330 @@
+/* Кастомные стили из bit.html для всего проекта */
+:where([class^="ri-"])::before {
+    content: "\f3c2";
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Фиксированный навбар - основные стили */
+#mainHeader {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Улучшенные эффекты наведения для футера */
+footer a {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+footer a:hover {
+    color: #0ea5e9 !important;
+    transform: translateX(5px);
+}
+
+/* Подсветка ссылок в футере при наведении */
+footer a::before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0ea5e9;
+    transition: width 0.3s ease;
+}
+
+footer a:hover::before {
+    width: 100%;
+}
+
+/* Дополнительная подсветка для социальных иконок */
+footer .social-links a:hover {
+    transform: translateY(-3px) scale(1.1);
+    color: #0ea5e9 !important;
+}
+
+/* Подсветка для заголовков секций в футере */
+footer h4 {
+    transition: color 0.3s ease;
+}
+
+footer h4:hover {
+    color: #0ea5e9 !important;
+}
+
+/* Анимация для ссылок в навбаре */
+#mainHeader nav a {
+    position: relative;
+    overflow: hidden;
+}
+
+#mainHeader nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #0ea5e9;
+    transition: width 0.3s ease;
+}
+
+#mainHeader nav a:hover::after {
+    width: 100%;
+}
+
+/* Улучшенные эффекты для всех ссылок */
+a {
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* Специальные эффекты для кнопок */
+.btn-primary {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
+}
+
+.hero-gradient {
+    background: linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(15, 23, 42, 0.6) 100%);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.1);
+}
+
+.timeline-dot::before {
+    content: '';
+    position: absolute;
+    left: -38px;
+    top: 8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #0ea5e9;
+    border: 3px solid #0f172a;
+}
+
+.timeline-line::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background-color: #334155;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #0ea5e9;
+}
+
+.custom-checkbox {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #1e293b;
+    border: 1px solid #475569;
+    border-radius: 4px;
+}
+
+.custom-checkbox:hover input~.checkmark {
+    border-color: #0ea5e9;
+}
+
+.custom-checkbox input:checked~.checkmark {
+    background-color: #0ea5e9;
+    border-color: #0ea5e9;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked~.checkmark:after {
+    display: block;
+}
+
+.custom-checkbox .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Дополнительные стили для существующих элементов */
+.bg-gray-950 {
+    background-color: #030712;
+}
+
+.text-gray-100 {
+    color: #f3f4f6;
+}
+
+.bg-gray-900 {
+    background-color: #111827;
+}
+
+.bg-gray-800 {
+    background-color: #1f2937;
+}
+
+.text-primary {
+    color: #0ea5e9;
+}
+
+.bg-primary {
+    background-color: #0ea5e9;
+}
+
+.border-gray-800 {
+    border-color: #1f2937;
+}
+
+/* Filter button styles */
+.partner-filter.active,
+.service-filter.active,
+.company-filter.active {
+    background-color: #0ea5e9 !important;
+    color: white !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(14, 165, 233, 0.3);
+}
+
+.partner-filter,
+.service-filter,
+.company-filter {
+    transition: all 0.3s ease;
+}
+
+.partner-filter:hover,
+.service-filter:hover,
+.company-filter:hover {
+    transform: translateY(-2px);
+}
+
+/* Text color improvements */
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+}
+
+.text-gray-400 {
+    color: #94a3b8 !important;
+}
+
+.service-card h2,
+.partner-card h3 {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.service-card p,
+.partner-card p {
+    color: #94a3b8 !important;
+}
+
+.service-card a,
+.partner-card a {
+    color: #0ea5e9 !important;
+    transition: color 0.3s ease;
+}
+
+.service-card a:hover,
+.partner-card a:hover {
+    color: #38bdf8 !important;
+}
+
+/* Contact form styles */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
+}
+
+select option {
+    background-color: #1f2937;
+    color: white;
+}
+
+/* Contact info styles */
+.contact-info-item {
+    transition: transform 0.3s ease;
+}
+
+.contact-info-item:hover {
+    transform: translateX(5px);
+}
+
+.contact-info-item i {
+    transition: color 0.3s ease;
+}
+
+.contact-info-item:hover i {
+    color: #38bdf8;
+}

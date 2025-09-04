@@ -1,0 +1,35 @@
+RewriteEngine On
+
+# Автоматически скрываем реальные пути к файлам
+RewriteRule ^services/([^/]+)$ pages/services/$1.html [L]
+RewriteRule ^products/([^/]+)$ pages/products/$1.html [L]
+
+# Убираем расширение .html из адресной строки
+RewriteCond %{THE_REQUEST} /([^.]+)\.html [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+# Внутреннее перенаправление для .html файлов
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^([^/]+)\.html$ $1.html [L]
+
+# Безопасность
+Options -Indexes
+
+# Защита от доступа к системным файлам
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Защита от доступа к конфигурационным файлам
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# 🔒 Заголовки безопасности
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "DENY"
+    Header always set Content-Security-Policy "frame-ancestors 'none';"
+    Header always set X-Content-Type-Options "nosniff"
+</IfModule>

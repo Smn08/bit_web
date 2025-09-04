@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+    <title>Business IT — Главная</title>
+    <link rel="icon" href="images/logo_cyberbit.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="css/bit-custom.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9',
+                        secondary: '#0f172a'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(15, 23, 42, 0.6) 100%) !important;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(15, 23, 42, 0.6) 100%);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.1);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-gray-100">
+    <div id="header-placeholder"></div>
+    <script>fetch('components/header.html').then(r => r.text()).then(t => document.getElementById('header-placeholder').innerHTML = t);</script>
+    <script>
+        fetch('components/header.html')
+            .then(r => r.text())
+            .then(t => {
+                document.getElementById('header-placeholder').innerHTML = t;
+                // После вставки хедера выделяем активный пункт
+                const currentPath = window.location.pathname.replace(/\\/g, '/');
+                const navLinks = document.querySelectorAll('#header-placeholder nav a');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentPath ||
+                        (link.getAttribute('href') === '/index.html' && (currentPath === '/' || currentPath === '/index.html'))) {
+                        link.classList.add('text-primary');
+                        link.classList.remove('text-gray-100');
+                        link.style.backgroundColor = 'rgba(14, 165, 233, 0.1)';
+                        link.style.padding = '0.5rem 1rem';
+                        link.style.borderRadius = '0.5rem';
+                    }
+                });
+            });
+    </script>
+    <main class="pt-0">
+        <!-- Hero Section -->
+        <section class="relative w-full bg-gray-900 overflow-hidden">
+            <div class="absolute inset-0 w-full h-full"
+                style="background-image: url('https://readdy.ai/api/search-image?query=cybersecurity%20concept%20with%20digital%20lock%2C%20binary%20code%2C%20circuit%20patterns%2C%20glowing%20blue%20elements%20on%20dark%20background%2C%20professional%20modern%20tech%20aesthetic%2C%20abstract%20digital%20security%20visualization&width=1920&height=1080&seq=hero1&orientation=landscape'); background-size: cover; background-position: center;">
+            </div>
+            <div class="absolute inset-0 hero-gradient"></div>
+            <div class="relative container mx-auto px-4 py-24 md:py-32 flex flex-col items-start">
+                <div class="max-w-2xl">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Бизнес Айти - Защита вашего <span class="text-primary">цифрового пространства</span> в
+                        современном мире
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8">
+                        Мы обеспечиваем комплексную защиту информационных систем и данных вашего бизнеса от современных
+                        киберугроз, используя передовые технологии и экспертный подход.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="pages/feedback.html"
+                            class="bg-primary text-white px-8 py-3.5 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-center">
+                            Получить консультацию
+                        </a>
+                        <a href="pages/services.html"
+                            class="bg-gray-800/70 backdrop-blur-sm text-white px-8 py-3.5 !rounded-button whitespace-nowrap hover:bg-gray-700/70 transition-colors text-center">
+                            Наши услуги
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section class="py-20 bg-gray-950">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Почему выбирают нас</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Мы предлагаем комплексный подход к информационной
+                        безопасности, основанный на многолетнем опыте и глубоком понимании современных киберугроз.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div
+                        class="bg-gray-900 p-8 rounded-lg border border-gray-800 hover:border-primary/30 transition-colors">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg mb-6">
+                            <i class="ri-shield-check-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Комплексная защита</h3>
+                        <p class="text-gray-400">Полный спектр услуг по обеспечению информационной безопасности вашего
+                            бизнеса от внешних и внутренних угроз.</p>
+                    </div>
+                    <div
+                        class="bg-gray-900 p-8 rounded-lg border border-gray-800 hover:border-primary/30 transition-colors">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg mb-6">
+                            <i class="ri-team-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Команда экспертов</h3>
+                        <p class="text-gray-400">Сертифицированные специалисты с многолетним опытом работы в сфере
+                            кибербезопасности и защиты информации.</p>
+                    </div>
+                    <div
+                        class="bg-gray-900 p-8 rounded-lg border border-gray-800 hover:border-primary/30 transition-colors">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg mb-6">
+                            <i class="ri-24-hours-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Круглосуточный мониторинг</h3>
+                        <p class="text-gray-400">Непрерывное наблюдение за вашими системами и мгновенное реагирование на
+                            потенциальные угрозы в режиме 24/7.</p>
+                    </div>
+                    <div
+                        class="bg-gray-900 p-8 rounded-lg border border-gray-800 hover:border-primary/30 transition-colors">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-lg mb-6">
+                            <i class="ri-lock-password-line ri-2x text-primary"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Индивидуальный подход</h3>
+                        <p class="text-gray-400">Разработка и внедрение решений, адаптированных под конкретные
+                            потребности и особенности вашего бизнеса.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview -->
+        <section class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Наши услуги</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Мы предлагаем широкий спектр услуг по обеспечению
+                        информационной безопасности для бизнеса любого масштаба.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="service-card bg-gray-800 rounded-lg overflow-hidden transition-all duration-300">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=penetration%20testing%20concept%2C%20cybersecurity%20specialists%20analyzing%20system%20vulnerabilities%2C%20dark%20blue%20environment%20with%20digital%20elements%2C%20professional%20security%20testing%20visualization&width=600&height=400&seq=service1"
+                                alt="Пентест" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">Тестирование на проникновение</h3>
+                            <p class="text-gray-400 mb-4">Комплексная проверка защищенности информационных систем от
+                                несанкционированного доступа и кибератак.</p>
+                            <a href="pages/services/pentest.html"
+                                class="inline-flex items-center text-primary hover:text-primary/80">
+                                Подробнее
+                                <i class="ri-arrow-right-line ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-card bg-gray-800 rounded-lg overflow-hidden transition-all duration-300">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=security%20monitoring%20system%20with%20multiple%20screens%20showing%20network%20analysis%2C%20dark%20blue%20environment%20with%20digital%20elements%2C%20professional%20cybersecurity%20visualization&width=600&height=400&seq=service2"
+                                alt="CyberWatch" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">Анализ безопасности периметра CyberWatch</h3>
+                            <p class="text-gray-400 mb-4">Непрерывный мониторинг и анализ безопасности внешнего
+                                периметра организации.</p>
+                            <a href="pages/products/cyberwatch.html"
+                                class="inline-flex items-center text-primary hover:text-primary/80">
+                                Подробнее
+                                <i class="ri-arrow-right-line ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-card bg-gray-800 rounded-lg overflow-hidden transition-all duration-300">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=software%20quality%20assessment%20process%2C%20developers%20reviewing%20code%20quality%2C%20dark%20blue%20environment%20with%20digital%20elements%2C%20professional%20development%20visualization&width=600&height=400&seq=service3"
+                                alt="Quality Assessment" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">Quality Assessment</h3>
+                            <p class="text-gray-400 mb-4">Комплексная оценка качества программного обеспечения и его
+                                соответствия стандартам безопасности.</p>
+                            <a href="pages/services/qa.html"
+                                class="inline-flex items-center text-primary hover:text-primary/80">
+                                Подробнее
+                                <i class="ri-arrow-right-line ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="pages/services.html"
+                        class="bg-gray-800 text-white px-6 py-3 !rounded-button whitespace-nowrap hover:bg-gray-700 transition-colors inline-block">
+                        Все услуги
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gray-900 relative overflow-hidden">
+            <div class="absolute inset-0 opacity-20"
+                style="background-image: url('https://readdy.ai/api/search-image?query=abstract%20cybersecurity%20concept%20with%20digital%20shield%2C%20binary%20code%2C%20circuit%20patterns%2C%20dark%20blue%20background%20with%20glowing%20elements%2C%20professional%20modern%20tech%20aesthetic&width=1920&height=1080&seq=cta'); background-size: cover; background-position: center;">
+            </div>
+            <div class="container mx-auto px-4 relative">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Готовы защитить свой бизнес?</h2>
+                    <p class="text-gray-400 mb-8">
+                        Свяжитесь с нами сегодня, чтобы получить бесплатную консультацию и узнать, как мы можем помочь
+                        вам обеспечить надежную защиту вашей информационной системы.
+                    </p>
+                    <a href="pages/contacts.html"
+                        class="bg-primary text-white px-8 py-3.5 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors">
+                        Получить консультацию
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-20 bg-gray-950">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Отзывы наших клиентов</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Мы гордимся тем, что наши клиенты говорят о нас. Вот
+                        некоторые из их отзывов:</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-900 p-8 rounded-lg border border-gray-800">
+                        <p class="text-gray-400 mb-4">"Команда CyberBits обеспечила нам надежную защиту от кибератак. Их
+                            профессионализм и внимание к деталям впечатляют!"</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                                <i class="ri-user-line ri-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold">Иван Иванов</h4>
+                                <p class="text-gray-500">CEO, Компания Ромашка</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-lg border border-gray-800">
+                        <p class="text-gray-400 mb-4">"Отличный сервис и поддержка. Мы чувствуем себя в безопасности с
+                            CyberBits."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                                <i class="ri-user-line ri-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold">Мария Петрова</h4>
+                                <p class="text-gray-500">CTO, Компания Лотос</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gray-900 p-8 rounded-lg border border-gray-800">
+                        <p class="text-gray-400 mb-4">"Профессионалы своего дела! Рекомендуем всем, кто ценит свою
+                            безопасность."</p>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
+                                <i class="ri-user-line ri-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-semibold">Сергей Сергеев</h4>
+                                <p class="text-gray-500">CISO, Компания Бета</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- news Preview Section -->
+        <section class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Последние новости</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Читайте, чтобы быть в курсе последних новостей и
+                        тенденций в области информационной безопасности.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 rounded-lg overflow-hidden transition-all duration-300">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=news%20post%20about%20cybersecurity%20trends%2C%20laptop%20with%20code%20on%20screen%2C%20dark%20blue%20environment%2C%20professional%20newsging%20visualization&width=600&height=400&seq=news1"
+                                alt="Статья 1" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">Новые тенденции в кибербезопасности</h3>
+                            <p class="text-gray-400 mb-4">Обзор последних тенденций и технологий в области
+                                кибербезопасности, которые помогут защитить ваш бизнес.</p>
+                            <a href="pages/news/post1.html"
+                                class="inline-flex items-center text-primary hover:text-primary/80">
+                                Читать далее
+                                <i class="ri-arrow-right-line ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg overflow-hidden transition-all duration-300">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=news%20post%20about%20data%20protection%2C%20padlock%20on%20keyboard%2C%20dark%20blue%20environment%2C%20professional%20newsging%20visualization&width=600&height=400&seq=news2"
+                                alt="Статья 2" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">Защита данных в цифровую эпоху</h3>
+                            <p class="text-gray-400 mb-4">Как обеспечить надежную защиту данных в условиях растущих
+                                киберугроз и утечек информации.</p>
+                            <a href="pages/news/post2.html"
+                                class="inline-flex items-center text-primary hover:text-primary/80">
+                                Читать далее
+                                <i class="ri-arrow-right-line ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg overflow-hidden transition-all duration-300">
+                        <div class="h-48 overflow-hidden">
+                            <img src="https://readdy.ai/api/search-image?query=news%20post%20about%20penetration%20testing%2C%20cybersecurity%20experts%20performing%20pentest%2C%20dark%20blue%20environment%2C%20professional%20newsging%20visualization&width=600&height=400&seq=news3"
+                                alt="Статья 3" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">Пентест: проверка на прочность</h3>
+                            <p class="text-gray-400 mb-4">Почему тестирование на проникновение является неотъемлемой
+                                частью стратегии кибербезопасности вашего бизнеса.</p>
+                            <a href="pages/news/post3.html"
+                                class="inline-flex items-center text-primary hover:text-primary/80">
+                                Читать далее
+                                <i class="ri-arrow-right-line ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="pages/news.html"
+                        class="bg-gray-800 text-white px-6 py-3 !rounded-button whitespace-nowrap hover:bg-gray-700 transition-colors inline-block">
+                        Все статьи блога
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script>fetch('components/footer.html').then(r => r.text()).then(t => document.getElementById('footer-placeholder').innerHTML = t);</script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+    <title>Партнеры — Business IT</title>
+    <link rel="icon" href="../images/logo_cyberbit.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bit-custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config = { theme: { extend: { colors: { primary: '#0ea5e9', secondary: '#0f172a' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+    <style>
+        body {
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(15, 23, 42, 0.6) 100%) !important;
+        }
+    </style>
+</head>
+<body class="bg-gray-950 text-gray-100">
+    <div id="header-placeholder"></div>
+    <script>fetch('../components/header.html').then(r => r.text()).then(t => document.getElementById('header-placeholder').innerHTML = t);</script>
+    <script>
+        fetch('../components/header.html')
+            .then(r => r.text())
+            .then(t => {
+                document.getElementById('header-placeholder').innerHTML = t;
+                // После вставки хедера выделяем активный пункт
+                const currentPath = window.location.pathname.replace(/\\/g, '/');
+                const navLinks = document.querySelectorAll('#header-placeholder nav a');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentPath ||
+                        (link.getAttribute('href') === '/index.html' && (currentPath === '/' || currentPath === '/index.html'))) {
+                        link.classList.add('text-primary');
+                        link.classList.remove('text-gray-100');
+                        link.style.backgroundColor = 'rgba(14, 165, 233, 0.1)';
+                        link.style.padding = '0.5rem 1rem';
+                        link.style.borderRadius = '0.5rem';
+                    }
+                });
+            });
+    </script>
+    <main class="pt-0">
+        <section class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-4">Наши партнеры</h1>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Мы сотрудничаем с ведущими производителями решений в области информационной безопасности, что позволяет нам предлагать клиентам лучшие технологии защиты.</p>
+                </div>
+                <!-- Фильтры -->
+                <div class="flex flex-wrap gap-4 mb-10 justify-center">
+                    <button class="partner-filter bg-primary text-white px-4 py-2 rounded-button hover:bg-primary/80 transition-colors active" data-filter="all">Все</button>
+                    <button class="partner-filter bg-gray-800 text-white px-4 py-2 rounded-button hover:bg-primary/60 transition-colors" data-filter="certified">Сертифицированные</button>
+                    <button class="partner-filter bg-gray-800 text-white px-4 py-2 rounded-button hover:bg-primary/60 transition-colors" data-filter="mssp">MSSP</button>
+                    <button class="partner-filter bg-gray-800 text-white px-4 py-2 rounded-button hover:bg-primary/60 transition-colors" data-filter="key">Ключевые</button>
+                </div>
+                <div id="partners-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                    <div class="partner-card bg-gray-800 p-6 rounded-lg flex flex-col items-center text-center shadow-lg hover:shadow-xl transition cursor-pointer certified key" onclick="window.open('https://www.kaspersky.ru/', '_blank')">
+                        <img src="../images/kaspersky.jpg" alt="Kaspersky" class="h-24 mb-4 object-contain rounded-full border-2 border-primary">
+                        <h3 class="font-semibold text-lg mb-2">Kaspersky</h3>
+                        <p class="text-gray-400 text-sm mb-2">Мировой лидер в области кибербезопасности и антивирусных решений.</p>
+                        <span class="text-primary text-xs">kaspersky.ru</span>
+                    </div>
+                    <div class="partner-card bg-gray-800 p-6 rounded-lg flex flex-col items-center text-center shadow-lg hover:shadow-xl transition cursor-pointer mssp" onclick="window.open('https://www.facct.com/', '_blank')">
+                        <img src="../images/facct.png" alt="F.A.C.C.T." class="h-24 mb-4 object-contain rounded-full border-2 border-primary">
+                        <h3 class="font-semibold text-lg mb-2">F.A.C.C.T.</h3>
+                        <p class="text-gray-400 text-sm mb-2">Решения для мониторинга и анализа информационной безопасности.</p>
+                        <span class="text-primary text-xs">facct.com</span>
+                    </div>
+                    <div class="partner-card bg-gray-800 p-6 rounded-lg flex flex-col items-center text-center shadow-lg hover:shadow-xl transition cursor-pointer certified" onclick="window.open('https://www.infowatch.ru/', '_blank')">
+                        <img src="../images/infowatch.png" alt="Infowatch" class="h-24 mb-4 object-contain rounded-full border-2 border-primary">
+                        <h3 class="font-semibold text-lg mb-2">Infowatch</h3>
+                        <p class="text-gray-400 text-sm mb-2">Эксперт в области DLP и защиты корпоративных данных.</p>
+                        <span class="text-primary text-xs">infowatch.ru</span>
+                    </div>
+                    <div class="partner-card bg-gray-800 p-6 rounded-lg flex flex-col items-center text-center shadow-lg hover:shadow-xl transition cursor-pointer key" onclick="window.open('https://myoffice.ru/', '_blank')">
+                        <img src="../images/myoffice.jpg" alt="MyOffice" class="h-24 mb-4 object-contain rounded-full border-2 border-primary">
+                        <h3 class="font-semibold text-lg mb-2">MyOffice</h3>
+                        <p class="text-gray-400 text-sm mb-2">Российский офисный пакет для бизнеса и госструктур.</p>
+                        <span class="text-primary text-xs">myoffice.ru</span>
+                    </div>
+                    <div class="partner-card bg-gray-800 p-6 rounded-lg flex flex-col items-center text-center shadow-lg hover:shadow-xl transition cursor-pointer" onclick="window.open('https://alfadoc.ru/', '_blank')">
+                        <img src="../images/alfadoc.png" alt="AlfaDoc" class="h-24 mb-4 object-contain rounded-full border-2 border-primary">
+                        <h3 class="font-semibold text-lg mb-2">AlfaDoc</h3>
+                        <p class="text-gray-400 text-sm mb-2">Автоматизация документооборота и бизнес-процессов.</p>
+                        <span class="text-primary text-xs">alfadoc.ru</span>
+                    </div>
+                    <div class="partner-card bg-gray-800 p-6 rounded-lg flex flex-col items-center text-center shadow-lg hover:shadow-xl transition cursor-pointer" onclick="window.open('https://www.lenovo.com/ru/ru/', '_blank')">
+                        <img src="../images/lenovo.png" alt="Lenovo" class="h-24 mb-4 object-contain rounded-full border-2 border-primary">
+                        <h3 class="font-semibold text-lg mb-2">Lenovo</h3>
+                        <p class="text-gray-400 text-sm mb-2">Ведущий производитель компьютерной техники и серверов.</p>
+                        <span class="text-primary text-xs">lenovo.com</span>
+                    </div>
+                    <div class="partner-card bg-gray-800 p-6 rounded-lg flex flex-col items-center text-center shadow-lg hover:shadow-xl transition cursor-pointer" onclick="window.open('https://e.huawei.com/ru/', '_blank')">
+                        <img src="../images/huawey.png" alt="Huawei" class="h-24 mb-4 object-contain rounded-full border-2 border-primary">
+                        <h3 class="font-semibold text-lg mb-2">Huawei</h3>
+                        <p class="text-gray-400 text-sm mb-2">Инновационные решения для корпоративных сетей и безопасности.</p>
+                        <span class="text-primary text-xs">huawei.com</span>
+                    </div>
+                    <div class="partner-card bg-gray-800 p-6 rounded-lg flex flex-col items-center text-center shadow-lg hover:shadow-xl transition cursor-pointer" onclick="window.open('https://www.fujitsu.com/ru/', '_blank')">
+                        <img src="../images/fujitsu.png" alt="Fujitsu" class="h-24 mb-4 object-contain rounded-full border-2 border-primary">
+                        <h3 class="font-semibold text-lg mb-2">Fujitsu</h3>
+                        <p class="text-gray-400 text-sm mb-2">Японский производитель серверов и ИТ-решений для бизнеса.</p>
+                        <span class="text-primary text-xs">fujitsu.com</span>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-lg mt-8">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                        <div class="md:w-1/2">
+                            <h2 class="text-2xl font-semibold mb-4">Хотите стать нашим партнером?</h2>
+                            <p class="text-gray-400 mb-4">Свяжитесь с нами для обсуждения возможностей сотрудничества и получения дополнительной информации о партнерской программе.</p>
+                            <a href="../pages/feedback.html" class="bg-primary text-white px-6 py-3 rounded-button hover:bg-primary/90 transition-colors">Стать партнером</a>
+                        </div>
+                        <div class="md:w-1/2 flex justify-center">
+                            <img src="https://readdy.ai/api/search-image?query=business%20partnership%20handshake%2C%20cybersecurity%20theme%2C%20dark%20blue%20background%2C%20digital%20elements&width=400&height=300" alt="Партнерство" class="rounded-lg shadow-lg max-h-48">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="footer-placeholder"></div>
+    <script>fetch('../components/footer.html').then(r=>r.text()).then(t=>document.getElementById('footer-placeholder').innerHTML=t);</script>
+    <script>
+    // Фильтрация партнеров
+    document.querySelectorAll('.partner-filter').forEach(btn => {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.partner-filter').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            const filter = this.getAttribute('data-filter');
+            document.querySelectorAll('.partner-card').forEach(card => {
+                if (filter === 'all' || card.classList.contains(filter)) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+  <title>Business IT — Услуги</title>
+  <link rel="icon" href="../images/logo_cyberbit.png" type="image/png">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  <link rel="stylesheet" href="/css/bit-custom.css">
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>tailwind.config = { theme: { extend: { colors: { primary: '#0ea5e9', secondary: '#0f172a' }, borderRadius: { 'none': '0px', 'sm': '4px', DEFAULT: '8px', 'md': '12px', 'lg': '16px', 'xl': '20px', '2xl': '24px', '3xl': '32px', 'full': '9999px', 'button': '8px' } } } }</script>
+</head>
+<body class="bg-gray-950 text-gray-100">
+    <div id="header-placeholder"></div>
+    <script>fetch('../components/header.html').then(r => r.text()).then(t => document.getElementById('header-placeholder').innerHTML = t);</script>
+    <script>
+        fetch('../components/header.html')
+            .then(r => r.text())
+            .then(t => {
+                document.getElementById('header-placeholder').innerHTML = t;
+                // После вставки хедера выделяем активный пункт
+                const currentPath = window.location.pathname.replace(/\\/g, '/');
+                const navLinks = document.querySelectorAll('#header-placeholder nav a');
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === currentPath ||
+                        (link.getAttribute('href') === '/index.html' && (currentPath === '/' || currentPath === '/index.html'))) {
+                        link.classList.add('text-primary');
+                        link.classList.remove('text-gray-100');
+                        link.style.backgroundColor = 'rgba(14, 165, 233, 0.1)';
+                        link.style.padding = '0.5rem 1rem';
+                        link.style.borderRadius = '0.5rem';
+                    }
+                });
+            });
+    </script>
+    <main class="pt-0">
+        <section class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-4">Наши услуги и решения</h1>
+                    <p class="text-gray-400 max-w-2xl mx-auto">Комплексные услуги по информационной безопасности и ИТ для бизнеса любого масштаба.</p>
+                </div>
+                <!-- Фильтры услуг -->
+                <div class="flex flex-wrap gap-4 mb-10 justify-center">
+                  <button class="service-filter bg-primary text-white px-4 py-2 rounded-button hover:bg-primary/80 transition-colors active" data-filter="all">Все</button>
+                  <button class="service-filter bg-gray-800 text-white px-4 py-2 rounded-button hover:bg-primary/60 transition-colors" data-filter="audit">Аудит и тестирование</button>
+                  <button class="service-filter bg-gray-800 text-white px-4 py-2 rounded-button hover:bg-primary/60 transition-colors" data-filter="education">Обучение</button>
+                  <button class="service-filter bg-gray-800 text-white px-4 py-2 rounded-button hover:bg-primary/60 transition-colors" data-filter="integration">Внедрение и интеграция</button>
+                  <button class="service-filter bg-gray-800 text-white px-4 py-2 rounded-button hover:bg-primary/60 transition-colors" data-filter="dataprotection">Защита данных</button>
+                  <button class="service-filter bg-gray-800 text-white px-4 py-2 rounded-button hover:bg-primary/60 transition-colors" data-filter="corporate">Корпоративные решения</button>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="service-card audit dataprotection bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-bug-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Тестирование на проникновение</h2></div>
+                        <p class="text-gray-400 mb-4">Комплексная проверка защищённости информационных систем от кибератак.</p>
+                        <a href="services/pentest.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card audit bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-shield-keyhole-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Анализ безопасности периметра CyberWatch</h2></div>
+                        <p class="text-gray-400 mb-4">Мониторинг и анализ уязвимостей внешнего периметра корпоративной сети.</p>
+                        <a href="../pages/products/cyberwatch.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card audit bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-award-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Quality Assessment (оценка качества ПО)</h2></div>
+                        <p class="text-gray-400 mb-4">Комплексная оценка качества программного обеспечения.</p>
+                        <a href="services/qa.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card education bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-graduation-cap-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Киберучения</h2></div>
+                        <p class="text-gray-400 mb-4">Практическая подготовка к реальным кибератакам.</p>
+                        <a href="services/cybertest.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card education bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-lightbulb-flash-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Security Awareness (портал осведомлённости)</h2></div>
+                        <p class="text-gray-400 mb-4">Обучение сотрудников основам информационной безопасности.</p>
+                        <a href="services/cybereducation.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card integration bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-code-s-slash-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Разработка ПО</h2></div>
+                        <p class="text-gray-400 mb-4">Создание защищённых корпоративных приложений.</p>
+                        <a href="services/development.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card integration bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-settings-5-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Проектирование и внедрение средств защиты информации</h2></div>
+                        <p class="text-gray-400 mb-4">Комплексное внедрение средств защиты информации в инфраструктуру.</p>
+                        <a href="/pages/services/project.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card dataprotection bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-building-2-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Защита объектов КИИ</h2></div>
+                        <p class="text-gray-400 mb-4">Выполнение требований по защите критической инфраструктуры.</p>
+                        <a href="services/protectkii.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card dataprotection bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-user-shield-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Защита ИСПДн</h2></div>
+                        <p class="text-gray-400 mb-4">Защита информационных систем персональных данных.</p>
+                        <a href="services/protectispd.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card dataprotection bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-map-pin-user-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Защита ГИС</h2></div>
+                        <p class="text-gray-400 mb-4">Комплексная защита государственных информационных систем.</p>
+                        <a href="/pages/services/gis.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card integration bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-file-settings-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Внедрение и поддержка проектов на 1С</h2></div>
+                        <p class="text-gray-400 mb-4">Автоматизация и защита бизнес-процессов на платформе 1С.</p>
+                        <a href="services/1c.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card dataprotection bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-lock-2-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Antilocker</h2></div>
+                        <p class="text-gray-400 mb-4">Решение для защиты от шифровальщиков и вредоносного ПО.</p>
+                        <a href="../pages/products/antilocker.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card corporate bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-shield-user-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Решение Компании Infowatch</h2></div>
+                        <p class="text-gray-400 mb-4">Комплексные решения по защите информации от Infowatch.</p>
+                        <a href="../pages/products/infowatch.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card corporate bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-shield-star-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Решение Компании Spacebit</h2></div>
+                        <p class="text-gray-400 mb-4">Инновационные решения для управления безопасностью.</p>
+                        <a href="../pages/products/spacebit.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card corporate bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-user-settings-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Решения Компании Индид</h2></div>
+                        <p class="text-gray-400 mb-4">Централизованное управление и защита доступа.</p>
+                        <a href="../pages/products/indeed.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card corporate bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-user-settings-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Решения Avanpost</h2></div>
+                        <p class="text-gray-400 mb-4">Аутентификация и управление доступом.</p>
+                        <a href="../pages/products/avanpost.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card education bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-shield-cross-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Киберполигон</h2></div>
+                        <p class="text-gray-400 mb-4">Тренировочная платформа для отработки реагирования на инциденты.</p>
+                        <a href="services/cyberpolygon.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card corporate bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-firewall-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Межсетевой экран ИКС</h2></div>
+                        <p class="text-gray-400 mb-4">Защита корпоративной сети от внешних угроз.</p>
+                        <a href="#" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                    <div class="service-card education bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 p-6 flex flex-col">
+                        <div class="flex items-center mb-4"><i class="ri-graduation-cap-line text-primary text-2xl mr-3"></i><h2 class="text-xl font-semibold">Обучение</h2></div>
+                        <p class="text-gray-400 mb-4">Обучение сотрудников и руководителей по вопросам ИБ.</p>
+                        <a href="services/learning.html" class="text-primary hover:underline mt-auto">Подробнее</a>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="../pages/feedback.html" class="bg-primary text-white px-8 py-3.5 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors inline-block">Обсудить ваш проект</a>
+                </div>
+            </div>
+        </section>
+    </main>
+  <div id="footer-placeholder"></div>
+  <script>fetch('../components/footer.html').then(r=>r.text()).then(t=>document.getElementById('footer-placeholder').innerHTML=t);</script>
+  <script>
+                // Фильтрация услуг
+                document.querySelectorAll('.service-filter').forEach(btn => {
+                  btn.addEventListener('click', function() {
+                    document.querySelectorAll('.service-filter').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.getAttribute('data-filter');
+                    document.querySelectorAll('.service-card').forEach(card => {
+                      if (filter === 'all' || card.classList.contains(filter)) {
+                        card.style.display = '';
+                      } else {
+                        card.style.display = 'none';
+                      }
+                    });
+                  });
+                });
+                </script>
+</body>
+</html>

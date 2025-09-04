@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Business IT — Наш опыт</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors 'none'">
+    <link rel="shortcut icon" href="../images/logo_cyberbit.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <link rel="stylesheet" href="../css/bit-custom.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0ea5e9',
+                        secondary: '#0f172a'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(90deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.8) 50%, rgba(15, 23, 42, 0.6) 100%) !important;
+        }
+        
+        .page-content {
+            padding-top: 64px; /* Уменьшенный отступ для фиксированного навбара */
+        }
+        
+
+        
+        .project-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(75, 85, 99, 0.3);
+            cursor: pointer;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(14, 165, 233, 0.5);
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.1);
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: linear-gradient(45deg, #f59e0b, #f97316);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+        }
+
+        .experience-filter.active {
+            background-color: #0ea5e9;
+            color: white;
+        }
+
+        .experience-filter:not(.active) {
+            background-color: #1f2937;
+            color: white;
+        }
+
+        .experience-filter:not(.active):hover {
+            background-color: rgba(14, 165, 233, 0.6);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-950 text-gray-100">
+    <!-- Header component -->
+    <div id="header-placeholder"></div>
+    <script>
+        fetch('../components/header.html')
+            .then(r => r.text())
+            .then(t => {
+                document.getElementById('header-placeholder').innerHTML = t;
+            });
+    </script>
+
+    <main class="page-content">
+        <!-- Hero Section with Statistics -->
+        <section class="py-16 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold mb-4">Наш опыт</h1>
+                    <p class="text-lg text-gray-300 max-w-2xl mx-auto mb-8">
+                        Более 10 лет успешной работы в области информационной безопасности. 
+                        Реализовали сотни проектов для компаний различных отраслей.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-building-line text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-2">500+</h3>
+                        <p class="text-gray-400">Реализованных проектов</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-team-line text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-2">200+</h3>
+                        <p class="text-gray-400">Довольных клиентов</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-time-line text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-2">10+</h3>
+                        <p class="text-gray-400">Лет опыта</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="w-20 h-20 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="ri-shield-check-line text-3xl text-primary"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-2">99.9%</h3>
+                        <p class="text-gray-400">Успешных проектов</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Categories Section -->
+        <section class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Проекты по классам решений</h2>
+                    <p class="text-gray-400 max-w-2xl mx-auto">
+                        Наши решения охватывают все аспекты информационной безопасности
+                    </p>
+                </div>
+
+                <!-- Фильтры -->
+                <div class="flex flex-wrap gap-4 mb-10 justify-center">
+                    <button class="experience-filter bg-primary text-white px-4 py-2 rounded-button hover:bg-primary/80 transition-colors active" data-filter="all">Все</button>
+                    <button class="experience-filter bg-gray-800 text-white px-4 py-2 rounded-button hover:bg-primary/60 transition-colors" data-filter="cybersecurity">Кибербезопасность</button>
+                    <button class="experience-filter bg-gray-800 text-white px-4 py-2 rounded-button hover:bg-primary/60 transition-colors" data-filter="data-protection">Защита данных</button>
+                    <button class="experience-filter bg-gray-800 text-white px-4 py-2 rounded-button hover:bg-primary/60 transition-colors" data-filter="cloud-security">Облачная безопасность</button>
+                    <button class="experience-filter bg-gray-800 text-white px-4 py-2 rounded-button hover:bg-primary/60 transition-colors" data-filter="training">Обучение и консалтинг</button>
+                </div>
+
+                <div id="experience-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Кибербезопасность -->
+                    <div class="project-card bg-gray-800 p-6 rounded-lg relative cybersecurity" data-category="cybersecurity">
+                        <div class="popular-badge">🔥 Популярно</div>
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-shield-cross-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Киберучения для банковского сектора</h4>
+                        <p class="text-gray-400 mb-4">Проведение комплексных киберучений для топ-10 банков России с моделированием реальных атак.</p>
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <i class="ri-calendar-line"></i>
+                            <span>2024</span>
+                            <i class="ri-building-line ml-4"></i>
+                            <span>Банковский сектор</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card bg-gray-800 p-6 rounded-lg cybersecurity" data-category="cybersecurity">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-shield-cross-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Киберполигон для Минобороны</h4>
+                        <p class="text-gray-400 mb-4">Создание специализированной среды для тестирования систем безопасности военного назначения.</p>
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <i class="ri-calendar-line"></i>
+                            <span>2023</span>
+                            <i class="ri-government-line ml-4"></i>
+                            <span>Госсектор</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card bg-gray-800 p-6 rounded-lg cybersecurity" data-category="cybersecurity">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-shield-cross-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Тестирование на проникновение для IT-компаний</h4>
+                        <p class="text-gray-400 mb-4">Комплексное тестирование безопасности для крупных IT-корпораций и стартапов.</p>
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <i class="ri-calendar-line"></i>
+                            <span>2024</span>
+                            <i class="ri-computer-line ml-4"></i>
+                            <span>IT-сектор</span>
+                        </div>
+                    </div>
+
+                    <!-- Защита данных -->
+                    <div class="project-card bg-gray-800 p-6 rounded-lg relative data-protection" data-category="data-protection">
+                        <div class="popular-badge">🔥 Популярно</div>
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-database-2-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Защита ИСПД для медицинских учреждений</h4>
+                        <p class="text-gray-400 mb-4">Внедрение систем защиты персональных данных в сети медицинских клиник и больниц.</p>
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <i class="ri-calendar-line"></i>
+                            <span>2024</span>
+                            <i class="ri-heart-pulse-line ml-4"></i>
+                            <span>Медицина</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card bg-gray-800 p-6 rounded-lg data-protection" data-category="data-protection">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-database-2-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Защита КИИ для энергетики</h4>
+                        <p class="text-gray-400 mb-4">Обеспечение безопасности критической информационной инфраструктуры энергетических компаний.</p>
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <i class="ri-calendar-line"></i>
+                            <span>2023</span>
+                            <i class="ri-flashlight-line ml-4"></i>
+                            <span>Энергетика</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card bg-gray-800 p-6 rounded-lg data-protection" data-category="data-protection">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-database-2-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Шифрование данных для финтех</h4>
+                        <p class="text-gray-400 mb-4">Внедрение криптографической защиты для финансовых технологических компаний.</p>
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <i class="ri-calendar-line"></i>
+                            <span>2024</span>
+                            <i class="ri-bank-card-line ml-4"></i>
+                            <span>Финтех</span>
+                        </div>
+                    </div>
+
+                    <!-- Облачная безопасность -->
+                    <div class="project-card bg-gray-800 p-6 rounded-lg cloud-security" data-category="cloud-security">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-cloud-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Безопасность AWS для e-commerce</h4>
+                        <p class="text-gray-400 mb-4">Настройка безопасности облачной инфраструктуры для крупных интернет-магазинов.</p>
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <i class="ri-calendar-line"></i>
+                            <span>2024</span>
+                            <i class="ri-shopping-cart-line ml-4"></i>
+                            <span>E-commerce</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card bg-gray-800 p-6 rounded-lg cloud-security" data-category="cloud-security">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-cloud-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Azure Security для корпораций</h4>
+                        <p class="text-gray-400 mb-4">Внедрение систем безопасности Microsoft Azure для корпоративных клиентов.</p>
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <i class="ri-calendar-line"></i>
+                            <span>2023</span>
+                            <i class="ri-building-2-line ml-4"></i>
+                            <span>Корпорации</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card bg-gray-800 p-6 rounded-lg cloud-security" data-category="cloud-security">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-cloud-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Google Cloud Security</h4>
+                        <p class="text-gray-400 mb-4">Настройка безопасности Google Cloud Platform для технологических стартапов.</p>
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <i class="ri-calendar-line"></i>
+                            <span>2024</span>
+                            <i class="ri-rocket-line ml-4"></i>
+                            <span>Стартапы</span>
+                        </div>
+                    </div>
+
+                    <!-- Обучение и консалтинг -->
+                    <div class="project-card bg-gray-800 p-6 rounded-lg training" data-category="training">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-graduation-cap-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Security Awareness для нефтегаза</h4>
+                        <p class="text-gray-400 mb-4">Обучение персонала нефтегазовых компаний основам кибербезопасности.</p>
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <i class="ri-calendar-line"></i>
+                            <span>2024</span>
+                            <i class="ri-oil-line ml-4"></i>
+                            <span>Нефтегаз</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card bg-gray-800 p-6 rounded-lg training" data-category="training">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-graduation-cap-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Консалтинг по ИБ для ритейла</h4>
+                        <p class="text-gray-400 mb-4">Консультационные услуги по информационной безопасности для торговых сетей.</p>
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <i class="ri-calendar-line"></i>
+                            <span>2023</span>
+                            <i class="ri-store-line ml-4"></i>
+                            <span>Ритейл</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card bg-gray-800 p-6 rounded-lg training" data-category="training">
+                        <div class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="ri-graduation-cap-line text-2xl text-primary"></i>
+                        </div>
+                        <h4 class="text-xl font-semibold mb-3">Аудит безопасности для логистики</h4>
+                        <p class="text-gray-400 mb-4">Комплексный аудит информационной безопасности логистических компаний.</p>
+                        <div class="flex items-center gap-2 text-sm text-gray-500">
+                            <i class="ri-calendar-line"></i>
+                            <span>2024</span>
+                            <i class="ri-truck-line ml-4"></i>
+                            <span>Логистика</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-20 bg-gray-900">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Готовы обсудить ваш проект?</h2>
+                <p class="text-gray-400 mb-8 max-w-2xl mx-auto">
+                    Расскажите о ваших задачах, и мы предложим оптимальное решение 
+                    на основе нашего опыта в вашей отрасли.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/pages/contacts.html" 
+                       class="bg-primary text-white px-8 py-3 rounded-button hover:bg-primary/90 transition-colors inline-block">
+                        Обсудить проект
+                    </a>
+                    <a href="/pages/services.html" 
+                       class="border border-primary text-primary px-8 py-3 rounded-button hover:bg-primary hover:text-white transition-colors inline-block">
+                        Все услуги
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer component -->
+    <div id="footer-placeholder"></div>
+    <script>
+        fetch('../components/footer.html')
+            .then(r => r.text())
+            .then(t => {
+                document.getElementById('footer-placeholder').innerHTML = t;
+            });
+    </script>
+
+    <script>
+        // Фильтрация проектов по опыту
+        document.querySelectorAll('.experience-filter').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Убираем активный класс у всех кнопок
+                document.querySelectorAll('.experience-filter').forEach(b => {
+                    b.classList.remove('active');
+                    b.classList.remove('bg-primary');
+                    b.classList.add('bg-gray-800');
+                });
+                
+                // Добавляем активный класс к нажатой кнопке
+                this.classList.add('active');
+                this.classList.add('bg-primary');
+                this.classList.remove('bg-gray-800');
+                
+                const filter = this.getAttribute('data-filter');
+                
+                // Показываем/скрываем карточки
+                document.querySelectorAll('.project-card').forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = '';
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    } else {
+                        card.style.display = 'none';
+                        card.style.opacity = '0';
+                        card.style.transform = 'scale(0.8)';
+                    }
+                });
+            });
+        });
+
+        // Добавляем hover эффекты для карточек
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

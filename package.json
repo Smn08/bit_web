@@ -1,0 +1,19 @@
+{
+  "name": "bit_web",
+  "version": "1.0.0",
+  "description": "Modernized Cyberbits static site",
+  "license": "MIT with Commercial Use Restriction",
+  "author": "Smn08",
+  "homepage": "https://github.com/Smn08/bit_web",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Smn08/bit_web"
+  },
+  "keywords": ["cyberbits", "website", "static", "non-commercial"],
+  "scripts": {
+    "start": "live-server --open=index.html --port=3000 --watch=./"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
