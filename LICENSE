@@ -1,29 +1,24 @@
-MIT License with Commercial Use Restriction
+MIT License with Commons Clause Restriction
 
 Copyright (c) 2024 Smn08
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+in the Software, including without limitation the rights to use, copy, modify,
+merge, publish, and distribute copies of the Software, subject to the following
+conditions:
 
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
 
-COMMERCIAL USE RESTRICTION:
-Commercial use of this Software is prohibited without explicit written
-permission from the copyright holder. Commercial use includes, but is not
-limited to:
-- Use in any commercial product or service
-- Use for commercial purposes by any business, organization, or individual
-- Use in any revenue-generating activity
-- Use in any commercial website, application, or platform
+COMMONS CLAUSE RESTRICTION:
+The Software and derivatives may not be sold or used for commercial purposes 
+without explicit written permission from the copyright holder. 
+"Commercial purposes" means the sale, use, or other exploitation of the Software 
+in any manner that is primarily intended for or directed toward commercial advantage 
+or monetary compensation.
 
-For commercial use inquiries, please contact the copyright holder to obtain
-written permission. Permission may be granted subject to terms and conditions
-to be agreed upon between the parties.
+For commercial licensing inquiries, contact the copyright holder.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
